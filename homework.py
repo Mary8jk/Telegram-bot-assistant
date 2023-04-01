@@ -81,9 +81,7 @@ def check_response(response):
 
 
 def parse_status(homework):
-    """Извлекает из информации о конкретной домашней работе
-    статус этой работы.
-    """
+    """Извлекает из информации о конкретной домашней работе статус работы."""
     if not isinstance(homework, dict):
         logger.error('Ошибка типа данных "dict"')
         raise TypeError('Ошибка типа данных "dict"')
