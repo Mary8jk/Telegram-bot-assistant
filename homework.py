@@ -115,7 +115,7 @@ def main():
                 homework = homeworks[0]
                 homework_status = parse_status(homework)
                 message = homework_status
-            return send_message(bot, message)
+                return send_message(bot, message)
         except Exception as error:
             error_message = (f'Сбой в работе программы: {error}')
             logger.error(error_message)
