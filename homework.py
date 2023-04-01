@@ -53,7 +53,8 @@ def send_message(bot, message):
 def get_api_answer(timestamp):
     """Делает запрос к эндпоинту API-сервиса.
     В случае успешного запроса возвращает ответ API,
-    приведя его из формата JSON к типам данных Python"""
+    приведя его из формата JSON к типам данных Python.
+    """
     params = {'from_date': timestamp}
     try:
         response_get = requests.get(ENDPOINT, headers=HEADERS,
@@ -81,7 +82,8 @@ def check_response(response):
 
 def parse_status(homework):
     """Извлекает из информации о конкретной домашней работе
-    статус этой работы."""
+    статус этой работы.
+    """
     if not isinstance(homework, dict):
         logger.error('Ошибка типа данных "dict"')
         raise TypeError('Ошибка типа данных "dict"')
