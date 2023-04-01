@@ -93,12 +93,11 @@ def parse_status(homework):
     if homework_status is None:
         logger.error('В словаре нет ключа status')
         raise ValueError('В словаре нет ключа status')
-    if homework_status in HOMEWORK_VERDICTS:
-        verdict = HOMEWORK_VERDICTS[homework_status]
-        return (f'Изменился статус проверки '
-                f'работы "{homework_name}". {verdict}')
-    logger.error('Неизвестный статус домашки')
-    raise ValueError('Неизвестный статус')
+    if homework_status not in HOMEWORK_VERDICTS:
+        logger.error('Неизвестный статус домашки')
+        raise ValueError('Неизвестный статус')
+    verdict = HOMEWORK_VERDICTS[homework_status]
+    return (f'Изменился статус проверки работы "{homework_name}". {verdict}')
 
 
 def main():
@@ -115,7 +114,6 @@ def main():
             if homeworks:
                 homework = homeworks[0]
                 homework_status = parse_status(homework)
-                send_message(bot, homework_status)
                 message = homework_status
             return send_message(bot, message)
         except Exception as error:
