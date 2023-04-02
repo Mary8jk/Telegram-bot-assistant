@@ -83,19 +83,23 @@ def check_response(response):
 def parse_status(homework):
     """Извлекает из информации о конкретной домашней работе статус работы."""
     if not isinstance(homework, dict):
-        logger.error('Ошибка типа данных "dict"')
-        raise TypeError('Ошибка типа данных "dict"')
+        error_msg = 'Ошибка типа данных "dict"'
+        logger.error(error_msg)
+        raise TypeError(error_msg)
     homework_name = homework.get('homework_name')
     homework_status = homework.get('status')
     if homework_name is None:
-        logger.error('В словаре нет ключа homework_name')
-        raise ValueError('В словаре нет ключа homework_name')
+        error_msg_2 = 'В словаре нет ключа homework_name'
+        logger.error(error_msg_2)
+        raise ValueError(error_msg_2)
     if homework_status is None:
-        logger.error('В словаре нет ключа status')
-        raise ValueError('В словаре нет ключа status')
+        error_msg_3 = 'В словаре нет ключа status'
+        logger.error(error_msg_3)
+        raise ValueError(error_msg_3)
     if homework_status not in HOMEWORK_VERDICTS:
-        logger.error('Неизвестный статус домашки')
-        raise ValueError('Неизвестный статус')
+        error_msg_4 = 'Неизвестный статус домашки'
+        logger.error(error_msg_4)
+        raise ValueError(error_msg_4)
     verdict = HOMEWORK_VERDICTS[homework_status]
     return (f'Изменился статус проверки работы "{homework_name}". {verdict}')
 
