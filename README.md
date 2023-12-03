@@ -17,7 +17,7 @@ git clone git@github.com:Mary8jk/Telegram-bot-assistant.git
 ```
 
 ```
-cd homework_bot
+cd Telegram-bot-assistant
 ```
 
 Cоздать и активировать виртуальное окружение:
