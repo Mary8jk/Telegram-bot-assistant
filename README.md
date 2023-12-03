@@ -13,11 +13,11 @@
 ## Установка
 Клонировать репозиторий и перейти в него в командной строке:
 ```
-git clone git@github.com:Mary8jk/API-for-the-blog-platform.git
+git clone git@github.com:Mary8jk/Telegram-bot-assistant.git
 ```
 
 ```
-cd api_final_yatube
+cd homework_bot
 ```
 
 Cоздать и активировать виртуальное окружение:
